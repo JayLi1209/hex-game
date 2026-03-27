@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hex Game</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <p class="eyebrow">Playable Demo</p>
+        <h1>Hex vs Python Agent</h1>
+        <p class="subtitle">
+          Click a hex to place your stone. Blue connects left to right, and the
+          agent in red connects top to bottom.
+        </p>
+      </section>
+
+      <section class="controls" aria-label="Game controls">
+        <label class="control">
+          <span>Board size</span>
+          <select id="board-size">
+            <option value="7">7 x 7</option>
+            <option value="9" selected>9 x 9</option>
+            <option value="11">11 x 11</option>
+          </select>
+        </label>
+
+        <label class="control">
+          <span>Agent</span>
+          <select id="agent-select"></select>
+        </label>
+
+        <button id="reset-button" type="button">New game</button>
+      </section>
+
+      <section class="status-panel" aria-live="polite">
+        <p id="turn-indicator">Your turn</p>
+        <p id="status-message">
+          Start by clicking any open hex. The Python backend will answer with a
+          valid move from the selected policy.
+        </p>
+      </section>
+
+      <section class="board-section">
+        <div class="board-frame">
+          <div class="edge-label edge-top">Red goal</div>
+          <div class="edge-label edge-left">Blue goal</div>
+          <div class="edge-label edge-right">Blue goal</div>
+          <div class="edge-label edge-bottom">Red goal</div>
+          <div id="board" class="board" role="grid" aria-label="Hex board"></div>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
